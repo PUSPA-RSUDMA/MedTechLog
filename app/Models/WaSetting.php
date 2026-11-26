@@ -18,6 +18,7 @@ class WaSetting extends Model
         'is_enabled',
         'auto_remind_tasks',
         'auto_remind_logbook',
+        'reminder_time',
         'session_status',
     ];
 
@@ -40,6 +41,7 @@ class WaSetting extends Model
             'is_enabled' => false,
             'auto_remind_tasks' => true,
             'auto_remind_logbook' => true,
+            'reminder_time' => '07:00',
             'session_status' => 'disconnected',
         ]);
     }

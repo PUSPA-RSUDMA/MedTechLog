@@ -78,6 +78,12 @@
                     <input type="text" name="default_target_phone" value="{{ old('default_target_phone', $setting->default_target_phone) }}" placeholder="081234567890"
                            class="w-full rounded-lg border-slate-300 text-sm">
                 </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-700 mb-1">Jam Kirim Reminder Otomatis (WIB) *</label>
+                    <input type="time" name="reminder_time" value="{{ old('reminder_time', $setting->reminder_time ?? '07:00') }}" required
+                           class="w-full rounded-lg border-slate-300 text-sm font-semibold">
+                    <p class="text-[11px] text-slate-400 mt-1">Zona waktu Asia/Jakarta (WIB). Perubahan jam langsung aktif otomatis.</p>
+                </div>
                 <div class="space-y-2 pt-1 text-xs text-slate-700">
                     <label class="flex items-center gap-2">
                         <input type="checkbox" name="is_enabled" value="1" @checked($setting->is_enabled) class="rounded border-slate-300 text-teal-700">
