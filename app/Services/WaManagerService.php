@@ -27,7 +27,13 @@ class WaManagerService
             'status' => 'pending',
         ]);
 
-        if (! $setting->is_enabled || empty($setting->gateway_url)) {
+        if (empty($setting->gateway_url)) {
+            return $record;
+        }
+
+        // Pesan uji coba/manual selalu bisa dikirim kapan saja selama gateway_url terisi.
+        // Untuk reminder otomatis, tetap mengikuti status is_enabled.
+        if ($category !== 'manual' && ! $setting->is_enabled) {
             return $record;
         }
 
@@ -53,17 +59,24 @@ class WaManagerService
         }
 
         try {
-            $request = Http::timeout(4);
+            $request = Http::timeout(5);
             if ($setting->api_key) {
                 $request = $request->withHeaders(['X-API-KEY' => $setting->api_key]);
             }
 
-            $response = $request->get(rtrim($setting->gateway_url, '/') . '/status');
+            $baseUrl = rtrim($setting->gateway_url, '/');
+            $statusUrl = str_ends_with($baseUrl, '/api') ? $baseUrl . '/status' : $baseUrl . '/api/status';
+            $response = $request->get($statusUrl);
+
+            if ($response->status() === 404 && ! str_ends_with($baseUrl, '/api')) {
+                $response = $request->get($baseUrl . '/status');
+            }
 
             if ($response->successful()) {
                 $json = $response->json();
-                $connected = (bool) ($json['connected'] ?? false);
-                $status = (string) ($json['status'] ?? ($connected ? 'connected' : 'waiting_qr'));
+                $rawStatus = (string) ($json['status'] ?? '');
+                $connected = (bool) ($json['connected'] ?? (strtoupper($rawStatus) === 'CONNECTED'));
+                $status = $rawStatus !== '' ? $rawStatus : ($connected ? 'connected' : 'waiting_qr');
                 $setting->update(['session_status' => $status]);
 
                 return [
@@ -87,16 +100,35 @@ class WaManagerService
 
     private function dispatchRecord(WaMessage $record, WaSetting $setting): WaMessage
     {
+        if (empty($setting->gateway_url)) {
+            $record->update([
+                'status' => 'failed',
+                'error_message' => 'URL WA Gateway belum dikonfigurasi.',
+            ]);
+
+            return $record->fresh();
+        }
+
         try {
-            $request = Http::timeout(6);
+            $request = Http::timeout(15);
             if ($setting->api_key) {
                 $request = $request->withHeaders(['X-API-KEY' => $setting->api_key]);
             }
 
-            $response = $request->post(rtrim($setting->gateway_url, '/') . '/send-message', [
+            $baseUrl = rtrim($setting->gateway_url, '/');
+            $payload = [
                 'phone' => $record->recipient_phone,
+                'number' => $record->recipient_phone,
                 'message' => $record->message,
-            ]);
+            ];
+
+            // Prioritaskan endpoint wa-engine (/api/send), fallback ke /send-message
+            $primaryUrl = str_ends_with($baseUrl, '/api') ? $baseUrl . '/send' : $baseUrl . '/api/send';
+            $response = $request->post($primaryUrl, $payload);
+
+            if ($response->status() === 404) {
+                $response = $request->post($baseUrl . '/send-message', $payload);
+            }
 
             if ($response->successful()) {
                 $record->update([
