@@ -2,7 +2,7 @@
     <x-slot name="title">Dashboard</x-slot>
     <x-slot name="header">
         <div>
-            <h1 class="text-lg font-bold text-slate-900">Dashboard Lengkap MedTechLog</h1>
+            <h1 class="text-lg font-bold text-slate-900">Dashboard Lengkap SARTIKA</h1>
             <p class="text-xs text-slate-500">Pantauan menyeluruh Tugas IT, Tugas RM, Tugas Diklat, Logbook Acara, Riwayat Target Tanggal &amp; WA Manager</p>
         </div>
     </x-slot>

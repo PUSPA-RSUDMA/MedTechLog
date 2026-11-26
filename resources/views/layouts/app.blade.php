@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ isset($title) ? $title . ' — ' : '' }}MedTechLog</title>
+    <title>{{ isset($title) ? $title . ' — ' : '' }}SARTIKA</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -34,7 +34,7 @@
                     </svg>
                 </div>
                 <div x-show="!sidebarCollapsed" class="truncate">
-                    <span class="font-bold text-base tracking-tight text-white">MedTech<span class="text-[#F2E3E7]">Log</span></span>
+                    <span class="font-bold text-base tracking-tight text-white">SAR<span class="text-[#F2E3E7]">TIKA</span></span>
                     <p class="text-[11px] text-[#E5CDD3] leading-none mt-0.5">Panel Admin Internal</p>
                 </div>
             </a>
@@ -116,7 +116,7 @@
 
         <div class="p-3 border-t border-slate-800 text-xs text-slate-400">
             <div x-show="!sidebarCollapsed" class="flex items-center justify-between">
-                <span>MedTechLog</span>
+                <span>SARTIKA</span>
                 <span class="inline-flex items-center gap-1 text-teal-400">
                     <span class="w-2 h-2 rounded-full bg-teal-400"></span> Admin
                 </span>
@@ -135,7 +135,7 @@
                     @isset($header)
                         {{ $header }}
                     @else
-                        <h1 class="text-lg font-semibold text-slate-800 truncate">{{ $title ?? 'MedTechLog' }}</h1>
+                        <h1 class="text-lg font-semibold text-slate-800 truncate">{{ $title ?? 'SARTIKA' }}</h1>
                     @endisset
                 </div>
             </div>

@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="utf-8">
-    <title>Laporan Ketercapaian MedTechLog</title>
+    <title>Laporan Ketercapaian SARTIKA</title>
     <style>
         body { font-family: DejaVu Sans, sans-serif; font-size: 10px; color: #331F24; margin: 0; padding: 14px; }
         .header { border-bottom: 2px solid #CB4D6D; padding-bottom: 10px; margin-bottom: 14px; }
@@ -27,8 +27,8 @@
 </head>
 <body>
     <div class="header">
-        <p class="brand">MedTechLog — Laporan Ketercapaian Pekerjaan</p>
-        <p class="subtitle">Rekap Tugas, Unit, PIC, dan Progres Ketercapaian Tim Internal</p>
+        <p class="brand">SARTIKA — Laporan Ketercapaian Pekerjaan</p>
+        <p class="subtitle">Sistem Arsip, Rencana, Tugas, dan Integrasi Kelompok Kerja</p>
     </div>
 
     <div class="meta">

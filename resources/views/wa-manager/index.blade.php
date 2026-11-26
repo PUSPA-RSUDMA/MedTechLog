@@ -110,7 +110,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-medium text-slate-700 mb-1">Isi Pesan *</label>
-                    <textarea name="message" rows="5" required placeholder="Halo, ini pesan uji coba dari MedTechLog WA Manager..."
+                    <textarea name="message" rows="5" required placeholder="Halo, ini pesan uji coba dari SARTIKA WA Manager..."
                               class="w-full rounded-lg border-slate-300 text-sm">{{ old('message') }}</textarea>
                 </div>
                 <button type="submit" class="w-full py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold">

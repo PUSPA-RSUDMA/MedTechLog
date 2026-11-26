@@ -52,7 +52,7 @@ class TaskDeadlineReminderService
             if ($waSetting->auto_remind_tasks) {
                 $phone = $task->pic?->phone ?: $waSetting->default_target_phone;
                 if ($phone) {
-                    $msg = "*[MedTechLog — Pengingat Tugas H-2]*\n"
+                    $msg = "*[SARTIKA — Pengingat Tugas H-2]*\n"
                         . "Tugas: *{$task->title}* ({$task->code})\n"
                         . "PIC / Unit: {$task->display_pic_name} ({$task->display_unit_name})\n"
                         . "Tanggal Target: *{$task->due_date->format('d M Y')}* (2 hari lagi)\n"
@@ -81,7 +81,7 @@ class TaskDeadlineReminderService
             if ($waSetting->auto_remind_tasks) {
                 $phone = $task->pic?->phone ?: $waSetting->default_target_phone;
                 if ($phone) {
-                    $msg = "*[MedTechLog — Pengingat Tugas H-1]*\n"
+                    $msg = "*[SARTIKA — Pengingat Tugas H-1]*\n"
                         . "Tugas: *{$task->title}* ({$task->code})\n"
                         . "PIC / Unit: {$task->display_pic_name} ({$task->display_unit_name})\n"
                         . "Tanggal Target: *{$task->due_date->format('d M Y')}* (BESOK!)\n"

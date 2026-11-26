@@ -47,7 +47,7 @@ class LogbookReminderService
 
             if ($waSetting->auto_remind_logbook && $waSetting->default_target_phone) {
                 $loc = $event->location ? "\nLokasi: {$event->location}" : '';
-                $msg = "*[MedTechLog — Pengingat Logbook Acara H-1]*\n"
+                $msg = "*[SARTIKA — Pengingat Logbook Acara H-1]*\n"
                     . "Acara: *{$event->title}*\n"
                     . "Tanggal: *{$event->event_date->format('d M Y')}* (BESOK!){$loc}";
                 $this->waService->send($waSetting->default_target_phone, $msg, 'logbook_h1', 'Admin Logbook');

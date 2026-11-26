@@ -41,7 +41,7 @@ class ReportExportService
             ],
         ])->setPaper('a4', 'landscape');
 
-        $filename = 'Laporan-Kinerja-MedTechLog-' . now()->format('Ymd-His') . '.pdf';
+        $filename = 'Laporan-Kinerja-SARTIKA-' . now()->format('Ymd-His') . '.pdf';
 
         return $pdf->download($filename);
     }
@@ -61,7 +61,7 @@ class ReportExportService
         $totalStyle = new Style(fontBold: true, fontSize: 10, fontColor: '331F24', backgroundColor: 'F2E3E7');
         $bodyStyle = new Style(fontSize: 10);
 
-        $writer->addRow(Row::fromValuesWithStyle(['LAPORAN KINERJA & LOG PEKERJAAN — MEDTECHLOG'], $titleStyle));
+        $writer->addRow(Row::fromValuesWithStyle(['LAPORAN KINERJA & LOG PEKERJAAN — SARTIKA'], $titleStyle));
         $writer->addRow(Row::fromValuesWithStyle([
             'Dicetak pada: ' . now()->format('d/m/Y H:i') . ' WIB',
             'Filter: ' . ($meta['filter_summary'] ?? 'Semua Data'),
@@ -112,7 +112,7 @@ class ReportExportService
 
         $writer->close();
 
-        $filename = 'Laporan-Kinerja-MedTechLog-' . now()->format('Ymd-His') . '.xlsx';
+        $filename = 'Laporan-Kinerja-SARTIKA-' . now()->format('Ymd-His') . '.xlsx';
 
         return response()->download($tempPath, $filename, [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
