@@ -155,8 +155,8 @@
                     data: {
                         labels: deptData.labels,
                         datasets: [
-                            { label: 'Total Tugas', data: deptData.total, backgroundColor: 'rgba(2, 132, 199, 0.8)', borderRadius: 6 },
-                            { label: 'Selesai (100%)', data: deptData.completed, backgroundColor: 'rgba(15, 118, 110, 0.85)', borderRadius: 6 },
+                            { label: 'Total Tugas', data: deptData.total, backgroundColor: '#E8C5CE', borderRadius: 6 },
+                            { label: 'Selesai (100%)', data: deptData.completed, backgroundColor: '#CB4D6D', borderRadius: 6 },
                         ],
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true } } },
@@ -171,7 +171,7 @@
                         labels: statusData.labels,
                         datasets: [{
                             data: statusData.counts,
-                            backgroundColor: ['#94A3B8', '#F59E0B', '#F43F5E', '#10B981'],
+                            backgroundColor: ['#D4B4BD', '#E5989B', '#CB4D6D', '#331F24'],
                         }],
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } },

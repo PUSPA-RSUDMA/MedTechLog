@@ -56,9 +56,9 @@ class ReportExportService
         $writer = new Writer();
         $writer->openToFile($tempPath);
 
-        $titleStyle = new Style(fontBold: true, fontSize: 13, fontColor: '0F766E');
-        $headerStyle = new Style(fontBold: true, fontSize: 10, fontColor: 'FFFFFF', backgroundColor: '0F766E');
-        $totalStyle = new Style(fontBold: true, fontSize: 10, backgroundColor: 'E2E8F0');
+        $titleStyle = new Style(fontBold: true, fontSize: 13, fontColor: 'CB4D6D');
+        $headerStyle = new Style(fontBold: true, fontSize: 10, fontColor: 'FFFFFF', backgroundColor: 'CB4D6D');
+        $totalStyle = new Style(fontBold: true, fontSize: 10, fontColor: '331F24', backgroundColor: 'F2E3E7');
         $bodyStyle = new Style(fontSize: 10);
 
         $writer->addRow(Row::fromValuesWithStyle(['LAPORAN KINERJA & LOG PEKERJAAN — MEDTECHLOG'], $titleStyle));

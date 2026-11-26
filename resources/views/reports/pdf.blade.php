@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <title>Laporan Ketercapaian MedTechLog</title>
     <style>
-        body { font-family: DejaVu Sans, sans-serif; font-size: 10px; color: #1e293b; margin: 0; padding: 14px; }
-        .header { border-bottom: 2px solid #0F766E; padding-bottom: 10px; margin-bottom: 14px; }
-        .brand { font-size: 18px; font-weight: bold; color: #0F766E; margin: 0; }
-        .subtitle { font-size: 11px; color: #475569; margin: 2px 0 0 0; }
-        .meta { margin-bottom: 12px; font-size: 9.5px; color: #334155; }
+        body { font-family: DejaVu Sans, sans-serif; font-size: 10px; color: #331F24; margin: 0; padding: 14px; }
+        .header { border-bottom: 2px solid #CB4D6D; padding-bottom: 10px; margin-bottom: 14px; }
+        .brand { font-size: 18px; font-weight: bold; color: #CB4D6D; margin: 0; }
+        .subtitle { font-size: 11px; color: #75565E; margin: 2px 0 0 0; }
+        .meta { margin-bottom: 12px; font-size: 9.5px; color: #331F24; }
         .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
-        .summary-table td { border: 1px solid #cbd5e1; padding: 6px 10px; background: #f8fafc; }
-        .summary-label { font-size: 8.5px; color: #64748b; text-transform: uppercase; display: block; }
-        .summary-val { font-size: 13px; font-weight: bold; color: #0f172a; }
+        .summary-table td { border: 1px solid #E5CDD3; padding: 6px 10px; background: #FAF5F6; }
+        .summary-label { font-size: 8.5px; color: #75565E; text-transform: uppercase; display: block; }
+        .summary-val { font-size: 13px; font-weight: bold; color: #331F24; }
         table.data { width: 100%; border-collapse: collapse; font-size: 9.5px; }
-        table.data th { background: #0F766E; color: #ffffff; padding: 6px; text-align: left; border: 1px solid #0F766E; }
-        table.data td { padding: 5px 6px; border: 1px solid #cbd5e1; vertical-align: top; }
-        table.data tr:nth-child(even) { background: #f8fafc; }
+        table.data th { background: #CB4D6D; color: #ffffff; padding: 6px; text-align: left; border: 1px solid #CB4D6D; }
+        table.data td { padding: 5px 6px; border: 1px solid #E5CDD3; vertical-align: top; }
+        table.data tr:nth-child(even) { background: #FAF5F6; }
         .right { text-align: right; }
         .center { text-align: center; }
         .signatures { width: 100%; margin-top: 28px; border-collapse: collapse; }

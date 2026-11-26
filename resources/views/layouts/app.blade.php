@@ -26,16 +26,16 @@
         ]"
         class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 text-slate-100 flex flex-col transition-all duration-200 ease-in-out lg:static lg:inset-auto">
 
-        <div class="h-16 flex items-center justify-between px-4 border-b border-slate-800">
+        <div class="h-16 flex items-center justify-between px-4 border-b border-slate-700/60">
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3 overflow-hidden">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-sky-600 flex items-center justify-center shrink-0 shadow-md">
+                <div class="w-9 h-9 rounded-lg bg-[#CB4D6D] flex items-center justify-center shrink-0 shadow-md">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2h-3.5l-1-1h-5l-1 1H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                 </div>
                 <div x-show="!sidebarCollapsed" class="truncate">
-                    <span class="font-bold text-base tracking-tight text-white">MedTech<span class="text-teal-400">Log</span></span>
-                    <p class="text-[11px] text-slate-400 leading-none mt-0.5">Panel Admin Internal</p>
+                    <span class="font-bold text-base tracking-tight text-white">MedTech<span class="text-[#F2E3E7]">Log</span></span>
+                    <p class="text-[11px] text-[#E5CDD3] leading-none mt-0.5">Panel Admin Internal</p>
                 </div>
             </a>
             <button @click="sidebarCollapsed = !sidebarCollapsed" class="hidden lg:inline-flex p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800" title="Perkecil / Perluas Sidebar">
@@ -48,8 +48,8 @@
         <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 text-sm">
             @php
                 $navClass = fn (bool $active) => $active
-                    ? 'bg-teal-600/20 text-teal-300 border-l-2 border-teal-400 font-medium'
-                    : 'text-slate-300 hover:bg-slate-800/80 hover:text-white';
+                    ? 'bg-[#CB4D6D] text-white font-semibold shadow-sm'
+                    : 'text-[#F2E3E7]/85 hover:bg-white/10 hover:text-white';
             @endphp
 
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition {{ $navClass(request()->routeIs('dashboard')) }}">
@@ -126,7 +126,7 @@
 
     {{-- Main Wrapper --}}
     <div class="flex-1 flex flex-col min-w-0">
-        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 lg:px-6 sticky top-0 z-20">
+        <header class="h-16 bg-[#F2E3E7]/80 backdrop-blur border-b border-slate-200 flex items-center justify-between px-4 lg:px-6 sticky top-0 z-20">
             <div class="flex items-center gap-3 min-w-0">
                 <button @click="sidebarOpen = true" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>

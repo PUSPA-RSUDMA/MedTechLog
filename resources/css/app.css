@@ -4,8 +4,39 @@
 
 @layer base {
     body {
-        @apply bg-slate-50 text-slate-800 antialiased;
+        background-color: #FAF5F6;
+        color: #331F24;
+        @apply antialiased;
     }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="url"],
+    select,
+    textarea {
+        background-color: #FFFFFF;
+        border-color: #E5CDD3;
+        color: #331F24;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #CB4D6D !important;
+        --tw-ring-color: rgba(203, 77, 109, 0.25) !important;
+    }
+}
+
+/* Soft secondary surface styling for cards & headers */
+.bg-white {
+    background-color: #FFFFFF;
+}
+
+.bg-secondary-card {
+    background-color: #F2E3E7;
 }
 
 [x-cloak] {
