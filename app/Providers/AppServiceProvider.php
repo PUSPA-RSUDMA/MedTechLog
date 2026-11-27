@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (! $this->app->runningUnitTests() && config('app.url')) {
+        if ($this->app->runningInConsole() && ! $this->app->runningUnitTests() && config('app.url')) {
             URL::forceRootUrl(config('app.url'));
         }
     }
